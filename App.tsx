@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
+import { createAppContainer } from 'react-navigation';
 
 import { store, persistor } from './src/store';
+import { AppNavigation } from './src/navigation';
+
+const AppContainer = createAppContainer(AppNavigation);
 
 export default class App extends Component<{}> {
   render() {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <View style={styles.container}>
-            <Text>Hello Template</Text>
-          </View>
+          <AppContainer style={styles.container} />
         </PersistGate>
       </Provider>
     );
