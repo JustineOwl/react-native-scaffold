@@ -6,6 +6,7 @@ import { createAppContainer } from 'react-navigation';
 
 import { store, persistor } from './src/store';
 import { AppNavigation } from './src/navigation';
+import { colors } from './src/config/colors';
 
 const AppContainer = createAppContainer(AppNavigation);
 
@@ -26,5 +27,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: colors.appBackground
   }
 });
