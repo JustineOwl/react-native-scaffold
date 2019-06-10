@@ -3,9 +3,7 @@ import React from 'react';
 import { TestComponent } from '../TestComponent';
 
 it('renders correctly', () => {
-  const component = shallow(
-    <TestComponent />
-  );
+    const component = shallow(<TestComponent />);
 
-  expect(component).toMatchSnapshot();
+    expect(component).toMatchSnapshot();
 });
